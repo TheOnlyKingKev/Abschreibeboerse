@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Nachrichten</title>
+
+    <script src="Artikel_Karte.js" defer></script>
+</head>
+<body>
+
+    <h1>Nachrichten</h1>
+
+    <div id="artikel-container"></div>
+
+
+    <script>
+        const container = document.getElementById("artikel-container");
+
+        
+
+        for (let i = 0; i < 10; i++) {
+            const element = document.createElement("artikel-karte");
+
+            element.setAttribute("titel", "Test");
+            element.setAttribute("beschreibung", "Testbeschreibung");
+            element.setAttribute("link", "test.html");
+
+            container.appendChild(element);
+        }
+
+    </script>
+
+    <style>
+        #artikel-container {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            padding: 10px;
+        }
+
+        artikel-karte {
+            flex: 0 0 250px;
+        }
+    </style>
+</body>
+</html>
